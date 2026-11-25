@@ -1,0 +1,11 @@
+{
+  "slug": "01_suma_lista",
+  "title": "Suma de una lista",
+  "description": "Escribe una función `suma_lista(numeros)` que reciba una lista de números y devuelva la suma de todos sus elementos. Si la lista está vacía debe devolver 0.",
+  "concepts": ["listas", "ciclos", "casos_limite"],
+  "difficulty": 1,
+  "order": 1,
+  "starter_code": "def suma_lista(numeros):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    try:\n        if suma_lista([1, 2, 3]) == 6:\n            passed += 1\n        else:\n            details.append('suma_lista([1,2,3]) debería ser 6')\n    except Exception as e:\n        details.append(f'Error en [1,2,3]: {e}')\n    try:\n        if suma_lista([]) == 0:\n            passed += 1\n        else:\n            details.append('suma_lista([]) debería ser 0')\n    except Exception as e:\n        details.append(f'Error en lista vacía: {e}')\n    try:\n        if suma_lista([-1, 1]) == 0:\n            passed += 1\n        else:\n            details.append('suma_lista([-1,1]) debería ser 0')\n    except Exception as e:\n        details.append(f'Error en negativos: {e}')\n    try:\n        if suma_lista([10]) == 10:\n            passed += 1\n        else:\n            details.append('suma_lista([10]) debería ser 10')\n    except Exception as e:\n        details.append(f'Error en un elemento: {e}')\n    try:\n        if suma_lista([1.5, 2.5]) == 4.0:\n            passed += 1\n        else:\n            details.append('suma_lista([1.5,2.5]) debería ser 4.0')\n    except Exception as e:\n        details.append(f'Error en flotantes: {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def suma_lista(numeros):\n    total = 0\n    for n in numeros:\n        total += n\n    return total\n"
+}

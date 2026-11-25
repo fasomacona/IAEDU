@@ -1,0 +1,11 @@
+{
+  "slug": "05_buscar_elemento",
+  "title": "Buscar un elemento",
+  "description": "Escribe una función `buscar(lista, valor)` que devuelva el índice de la primera aparición de `valor` en `lista`. Si el valor no está, debe devolver -1. No uses el método index().",
+  "concepts": ["listas", "ciclos", "condicionales", "indices"],
+  "difficulty": 2,
+  "order": 5,
+  "starter_code": "def buscar(lista, valor):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    cases = [\n        ([10, 20, 30, 20], 20, 1),\n        ([1, 2, 3], 4, -1),\n        ([], 5, -1),\n        (['a', 'b', 'c'], 'a', 0),\n        ([7, 7, 7], 7, 0),\n    ]\n    for i, (lst, val, expected) in enumerate(cases):\n        try:\n            result = buscar(lst, val)\n            if result == expected:\n                passed += 1\n            else:\n                details.append(f'Caso {i+1}: esperado {expected}, obtuvo {result}')\n        except Exception as e:\n            details.append(f'Caso {i+1}: error {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def buscar(lista, valor):\n    for i in range(len(lista)):\n        if lista[i] == valor:\n            return i\n    return -1\n"
+}

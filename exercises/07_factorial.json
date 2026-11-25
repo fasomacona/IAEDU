@@ -1,0 +1,11 @@
+{
+  "slug": "07_factorial",
+  "title": "Factorial",
+  "description": "Escribe una función `factorial(n)` que calcule el factorial de un número entero no negativo n (n!). Por definición, 0! = 1. No uses recursión ni la librería math.",
+  "concepts": ["ciclos", "acumuladores", "casos_limite"],
+  "difficulty": 2,
+  "order": 7,
+  "starter_code": "def factorial(n):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    cases = [\n        (0, 1),\n        (1, 1),\n        (5, 120),\n        (3, 6),\n        (7, 5040),\n    ]\n    for i, (inp, expected) in enumerate(cases):\n        try:\n            result = factorial(inp)\n            if result == expected:\n                passed += 1\n            else:\n                details.append(f'factorial({inp}): esperado {expected}, obtuvo {result}')\n        except Exception as e:\n            details.append(f'factorial({inp}): error {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def factorial(n):\n    resultado = 1\n    for i in range(2, n + 1):\n        resultado *= i\n    return resultado\n"
+}

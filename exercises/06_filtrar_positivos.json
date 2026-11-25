@@ -1,0 +1,11 @@
+{
+  "slug": "06_filtrar_positivos",
+  "title": "Filtrar números positivos",
+  "description": "Escribe una función `positivos(numeros)` que reciba una lista de números y devuelva una nueva lista que contenga solo los valores mayores que cero.",
+  "concepts": ["listas", "ciclos", "condicionales"],
+  "difficulty": 2,
+  "order": 6,
+  "starter_code": "def positivos(numeros):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    cases = [\n        ([1, -2, 3, 0, -5], [1, 3]),\n        ([], []),\n        ([-1, -2], []),\n        ([5, 10], [5, 10]),\n        ([0, 0, 1], [1]),\n    ]\n    for i, (inp, expected) in enumerate(cases):\n        try:\n            result = positivos(inp)\n            if result == expected:\n                passed += 1\n            else:\n                details.append(f'Caso {i+1}: esperado {expected}, obtuvo {result}')\n        except Exception as e:\n            details.append(f'Caso {i+1}: error {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def positivos(numeros):\n    resultado = []\n    for n in numeros:\n        if n > 0:\n            resultado.append(n)\n    return resultado\n"
+}

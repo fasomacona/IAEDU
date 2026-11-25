@@ -1,0 +1,11 @@
+{
+  "slug": "02_maximo",
+  "title": "Encontrar el máximo",
+  "description": "Escribe una función `encontrar_maximo(lista)` que reciba una lista de números no vacía y devuelva el valor máximo. No uses la función max() integrada.",
+  "concepts": ["listas", "ciclos", "comparaciones"],
+  "difficulty": 1,
+  "order": 2,
+  "starter_code": "def encontrar_maximo(lista):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    cases = [\n        ([3, 1, 4, 1, 5], 5),\n        ([-2, -5, -1], -1),\n        ([7], 7),\n        ([0, 0, 0], 0),\n        ([10, 20, 5, 30], 30),\n    ]\n    for i, (inp, expected) in enumerate(cases):\n        try:\n            result = encontrar_maximo(inp)\n            if result == expected:\n                passed += 1\n            else:\n                details.append(f'Caso {i+1}: esperado {expected}, obtuvo {result}')\n        except Exception as e:\n            details.append(f'Caso {i+1}: error {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def encontrar_maximo(lista):\n    maximo = lista[0]\n    for n in lista[1:]:\n        if n > maximo:\n            maximo = n\n    return maximo\n"
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "04_invertir_lista",
+  "title": "Invertir una lista",
+  "description": "Escribe una función `invertir(lista)` que reciba una lista y devuelva una NUEVA lista con los elementos en orden inverso. No modifiques la lista original y no uses [::-1] ni reversed().",
+  "concepts": ["listas", "ciclos", "indices"],
+  "difficulty": 2,
+  "order": 4,
+  "starter_code": "def invertir(lista):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    cases = [\n        ([1, 2, 3], [3, 2, 1]),\n        ([], []),\n        (['a'], ['a']),\n        ([1, 2], [2, 1]),\n        ([True, False, True], [True, False, True]),\n    ]\n    for i, (inp, expected) in enumerate(cases):\n        try:\n            original = list(inp)\n            result = invertir(inp)\n            if result == expected and inp == original:\n                passed += 1\n            elif inp != original:\n                details.append(f'Caso {i+1}: se modificó la lista original')\n            else:\n                details.append(f'Caso {i+1}: esperado {expected}, obtuvo {result}')\n        except Exception as e:\n            details.append(f'Caso {i+1}: error {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def invertir(lista):\n    nueva = []\n    for i in range(len(lista) - 1, -1, -1):\n        nueva.append(lista[i])\n    return nueva\n"
+}

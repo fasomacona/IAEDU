@@ -1,0 +1,11 @@
+{
+  "slug": "08_promedio",
+  "title": "Promedio de una lista",
+  "description": "Escribe una función `promedio(numeros)` que reciba una lista de números y devuelva su promedio aritmético. Si la lista está vacía debe devolver None (no 0).",
+  "concepts": ["listas", "ciclos", "casos_limite", "division"],
+  "difficulty": 2,
+  "order": 8,
+  "starter_code": "def promedio(numeros):\n    # Tu código aquí\n    pass\n",
+  "test_code": "def run_tests():\n    passed = 0\n    total = 5\n    details = []\n    cases = [\n        ([2, 4, 6], 4.0),\n        ([10], 10.0),\n        ([], None),\n        ([1, 2, 3, 4], 2.5),\n        ([-2, 2], 0.0),\n    ]\n    for i, (inp, expected) in enumerate(cases):\n        try:\n            result = promedio(inp)\n            if result == expected:\n                passed += 1\n            else:\n                details.append(f'Caso {i+1}: esperado {expected}, obtuvo {result}')\n        except Exception as e:\n            details.append(f'Caso {i+1}: error {e}')\n    return (passed, total, details)\n",
+  "reference_solution": "def promedio(numeros):\n    if len(numeros) == 0:\n        return None\n    total = 0\n    for n in numeros:\n        total += n\n    return total / len(numeros)\n"
+}
